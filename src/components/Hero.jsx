@@ -34,7 +34,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-800 dark:text-white">
-            Hi, I'm <span className="text-primary-600 dark:text-primary-400">Dhaneera Dulvanya Malawara Arachchi</span>
+            Hi, I'm <span className="text-primary-600 dark:text-primary-400">Dhaneera Dulvanya</span>
           </h1>
           
           <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-600 dark:text-gray-300">
