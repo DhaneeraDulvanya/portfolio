@@ -38,12 +38,12 @@ const Hero = () => {
           </h1>
           
           <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-600 dark:text-gray-300">
-            Full Stack Developer
+            Undergraduate Student
           </h2>
           
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-            I create beautiful, functional, and user-centered digital experiences.
-            Welcome to my portfolio!
+            Studying at Sabaragamuwa University of Sri Lanka. Passionate about creating 
+            beautiful, functional, and user-centered digital experiences. Welcome to my portfolio!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
