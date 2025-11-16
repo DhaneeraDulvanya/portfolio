@@ -28,13 +28,13 @@ const Hero = () => {
           <div className="mb-6">
             <div className="inline-block rounded-full bg-primary-100 dark:bg-primary-900 p-4 mb-4">
               <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 mx-auto flex items-center justify-center text-white text-5xl font-bold">
-                YN
+                DDM
               </div>
             </div>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-800 dark:text-white">
-            Hi, I'm <span className="text-primary-600 dark:text-primary-400">Your Name</span>
+            Hi, I'm <span className="text-primary-600 dark:text-primary-400">Dhaneera Dulvanya Malawara Arachchi</span>
           </h1>
           
           <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-600 dark:text-gray-300">
