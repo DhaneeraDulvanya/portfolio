@@ -7,11 +7,12 @@ const About = () => {
           <div>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
               I'm an enthusiastic undergraduate student at <span className="font-semibold text-primary-600 dark:text-primary-400">Sabaragamuwa University of Sri Lanka</span>, 
-              pursuing my degree with a passion for technology and innovation. I love creating
-              innovative solutions and beautiful user experiences through modern web technologies.
+              pursuing my degree with a passion for Data Science and Artificial Intelligence. I love creating
+              innovative solutions and beautiful user experiences through modern AI technologies, Data Analysis and Visualization. I am developing 
+              Web Applications in my free time for fun and learning.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-              Currently, I'm expanding my knowledge in software development, exploring new technologies,
+              Currently, I'm expanding my knowledge in Machine learning, Deep learning , Data Analysis and Visualization, exploring new technologies,
               and working on various projects to enhance my skills. I'm always eager to learn and 
               contribute to meaningful projects that make a difference.
             </p>
