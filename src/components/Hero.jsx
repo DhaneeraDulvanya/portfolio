@@ -42,8 +42,7 @@ const Hero = () => {
           </h2>
           
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-            Studying at Sabaragamuwa University of Sri Lanka. Passionate about creating 
-            beautiful, functional, and user-centered digital experiences. Welcome to my portfolio!
+            Studying at Sabaragamuwa University of Sri Lanka. Passionate about Machine learning & Data Science. Welcome to my portfolio!
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
