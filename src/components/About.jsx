@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 const About = () => {
+  const [imageError, setImageError] = useState(false)
+
   return (
     <section id="about" className="section-container bg-white dark:bg-gray-800">
       <h2 className="section-title dark:text-white">About Me</h2>
@@ -29,8 +33,19 @@ const About = () => {
           </div>
           <div className="relative">
             <div className="aspect-square rounded-lg bg-gradient-to-br from-primary-400 to-primary-600 p-1">
-              <div className="w-full h-full rounded-lg bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                <span className="text-6xl text-gray-400 dark:text-gray-500">Photo</span>
+              <div className="w-full h-full rounded-lg bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                {!imageError ? (
+                  <img 
+                    src="/public/images/pic.jpeg" 
+                    alt="Dhaneera Dulvanya" 
+                    className="w-full h-full object-cover"
+                    onError={() => setImageError(true)}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-6xl text-gray-400 dark:text-gray-500">Photo</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
