@@ -9,9 +9,9 @@ const Hero = () => {
   }, [])
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: FaGithub, href: 'https://github.com/DhaneeraDulvanya', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/dhaneera-dulvanya/', label: 'LinkedIn' },
+    { icon: FaEnvelope, href: 'mailto:22cds0407@ms.sab.ac.lk', label: 'Email' },
   ]
 
   return (
@@ -66,8 +66,7 @@ const Hero = () => {
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                 className="text-3xl text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label={label}
               >
