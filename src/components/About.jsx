@@ -22,7 +22,7 @@ const About = () => {
                 <div className="text-gray-600 dark:text-gray-300">University</div>
               </div>
               <div className="p-4 bg-primary-50 dark:bg-gray-700 rounded-lg">
-                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">UG</div>
+                <div className="text-2xl font-bold text-primary-600 dark:text-primary-400">Data Science</div>
                 <div className="text-gray-600 dark:text-gray-300">Undergraduate</div>
               </div>
             </div>
