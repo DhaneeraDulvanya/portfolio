@@ -7,10 +7,10 @@ const Experience = () => {
       institution: 'Sabaragamuwa University of Sri Lanka',
       period: 'Present',
       description: [
-        'Currently pursuing undergraduate studies in Computer Science/Information Technology',
-        'Actively learning software development, web technologies, and programming languages',
+        'Currently pursuing undergraduate studies in Data Science',
+        'Actively learning Programming Languages, Real World Data Analysis and Visualization',
         'Participating in university projects and assignments',
-        'Engaging in extracurricular activities and tech communities',
+        'Engaging in extracurricular activities such as sports, music and tech communities',
       ],
     },
   ]
