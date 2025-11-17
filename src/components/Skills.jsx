@@ -1,34 +1,31 @@
 import { FaReact, FaNodeJs, FaPython, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaAws } from 'react-icons/fa'
-import { SiTypescript, SiMongodb, SiPostgresql, SiTailwindcss, SiDocker } from 'react-icons/si'
+import { SiMongodb, SiMysql, SiTailwindcss} from 'react-icons/si'
 
 const Skills = () => {
   const skillCategories = [
     {
       title: 'Frontend',
       skills: [
-        { name: 'React', icon: FaReact, level: 90 },
-        { name: 'JavaScript', icon: FaJs, level: 85 },
-        { name: 'TypeScript', icon: SiTypescript, level: 80 },
-        { name: 'HTML5', icon: FaHtml5, level: 95 },
-        { name: 'CSS3', icon: FaCss3Alt, level: 90 },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, level: 85 },
+        { name: 'React', icon: FaReact, level: 65 },
+        { name: 'JavaScript', icon: FaJs, level: 60 },
+        { name: 'HTML5', icon: FaHtml5, level: 80 },
+        { name: 'CSS3', icon: FaCss3Alt, level: 80 },
+        { name: 'Tailwind CSS', icon: SiTailwindcss, level: 60 },
       ],
     },
     {
       title: 'Backend',
       skills: [
-        { name: 'Node.js', icon: FaNodeJs, level: 85 },
-        { name: 'Python', icon: FaPython, level: 80 },
-        { name: 'MongoDB', icon: SiMongodb, level: 75 },
-        { name: 'PostgreSQL', icon: SiPostgresql, level: 70 },
+        { name: 'Node.js', icon: FaNodeJs, level: 50 },
+        { name: 'Python', icon: FaPython, level: 85 },
+        { name: 'MongoDB', icon: SiMongodb, level: 55},
+        { name: 'mySQL', icon: SiMysql, level: 65 },
       ],
     },
     {
       title: 'Tools & Others',
       skills: [
-        { name: 'Git', icon: FaGitAlt, level: 90 },
-        { name: 'Docker', icon: SiDocker, level: 70 },
-        { name: 'AWS', icon: FaAws, level: 65 },
+        { name: 'Git', icon: FaGitAlt, level: 70 },
       ],
     },
   ]
