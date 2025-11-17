@@ -24,14 +24,14 @@ const Contact = () => {
   }
 
   const contactInfo = [
-    { icon: FaEnvelope, text: 'your.email@example.com', href: 'mailto:your.email@example.com' },
-    { icon: FaPhone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-    { icon: FaMapMarkerAlt, text: 'Your City, Country', href: '#' },
+    { icon: FaEnvelope, text: '22cds0407@ms.sab.ac.lk', href: 'mailto:your.email@example.com' },
+    { icon: FaPhone, text: '+94 77 286 5536', href: 'tel:+94772865536' },
+    { icon: FaMapMarkerAlt, text: 'Colombo, Sri Lanka', href: '#' },
   ]
 
   const socialLinks = [
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/dhaneera-dulvanya/', label: 'LinkedIn' },
+    { icon: FaGithub, href: 'https://github.com/DhaneeraDulvanya', label: 'GitHub' },
   ]
 
   return (
