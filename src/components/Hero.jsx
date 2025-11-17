@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [imageError, setImageError] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -27,8 +28,19 @@ const Hero = () => {
         >
           <div className="mb-6">
             <div className="inline-block rounded-full bg-primary-100 dark:bg-primary-900 p-4 mb-4">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 mx-auto flex items-center justify-center text-white text-5xl font-bold">
-                DDM
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 mx-auto overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
+                {!imageError ? (
+                  <img 
+                    src="/images/pic.jpeg" 
+                    alt="Dhaneera Dulvanya" 
+                    className="w-full h-full object-cover"
+                    onError={() => setImageError(true)}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
+                    DDM
+                  </div>
+                )}
               </div>
             </div>
           </div>
