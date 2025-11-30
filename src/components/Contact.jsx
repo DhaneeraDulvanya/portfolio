@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,24 +8,64 @@ const Contact = () => {
     email: '',
     message: '',
   })
+  const [isLoading, setIsLoading] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState({ type: null, message: '' })
+
+  // EmailJS configuration - Replace these with your actual values
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id'
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id'
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key'
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
+    // Clear status message when user starts typing
+    if (submitStatus.type) {
+      setSubmitStatus({ type: null, message: '' })
+    }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I will get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
+    setIsLoading(true)
+    setSubmitStatus({ type: null, message: '' })
+
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Dhaneera', // Your name or recipient name
+        },
+        PUBLIC_KEY
+      )
+
+      if (result.text === 'OK') {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! I will get back to you soon.',
+        })
+        setFormData({ name: '', email: '', message: '' })
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or contact me directly via email.',
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const contactInfo = [
-    { icon: FaEnvelope, text: '22cds0407@ms.sab.ac.lk', href: 'mailto:your.email@example.com' },
+    { icon: FaEnvelope, text: '22cds0407@ms.sab.ac.lk', href: 'mailto:22cds0407@ms.sab.ac.lk' },
     { icon: FaPhone, text: '+94 77 286 5536', href: 'tel:+94772865536' },
     { icon: FaMapMarkerAlt, text: 'Colombo, Sri Lanka', href: '#' },
   ]
@@ -138,11 +179,25 @@ const Contact = () => {
                   placeholder="Your Message"
                 ></textarea>
               </div>
+              {/* Status Message */}
+              {submitStatus.type && (
+                <div
+                  className={`p-4 rounded-lg ${
+                    submitStatus.type === 'success'
+                      ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                      : 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full px-8 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl"
+                disabled={isLoading}
+                className="w-full px-8 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isLoading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
