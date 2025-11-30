@@ -12,9 +12,9 @@ const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState({ type: null, message: '' })
 
   // EmailJS configuration - Replace these with your actual values
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id'
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id'
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key'
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_52lkgym'
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_mwcenhb'
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'yP_HfFyjDVtRWmq6d'
 
   const handleChange = (e) => {
     setFormData({
