@@ -5,7 +5,7 @@ const Experience = () => {
     {
       title: 'Data Science Undergraduate',
       subtitle: 'Sabaragamuwa University of Sri Lanka',
-      period: '2023 — Present',
+      period: '2024 — Present',
       icon: FaGraduationCap,
       highlights: [
         'Building strong analytics foundations with statistics and machine learning.',
@@ -13,9 +13,9 @@ const Experience = () => {
       ],
     },
     {
-      title: 'AI Capstone Project',
+      title: 'Capstone Project I',
       subtitle: 'Predictive model for student engagement',
-      period: '2025',
+      period: '2024',
       icon: FaLightbulb,
       highlights: [
         'Designed a machine learning pipeline for classification and reporting.',
