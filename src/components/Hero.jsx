@@ -31,7 +31,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/70 bg-white/90 px-5 py-2 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-900/5 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100">
               <FaStar className="text-cyan-500" />
-              Crafting intelligent experiences with modern UI design.
+              Building insightful data science solutions for smarter decision-making.
             </div>
 
             <div className={`space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
