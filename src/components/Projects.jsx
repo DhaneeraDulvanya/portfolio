@@ -3,35 +3,11 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 const Projects = () => {
   const projects = [
     {
-      title: 'AI Portfolio Studio',
-      description: 'A polished portfolio experience with dynamic AI insights and modern motion design.',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-    },
-    {
-      title: 'Smart Task Planner',
-      description: 'A team productivity app with real-time collaboration, analytics, and adaptive workflows.',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Node.js'],
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-    },
-    {
-      title: 'Weather Insight Dashboard',
-      description: 'A responsive weather visualizer using live API data, charts, and location intelligence.',
-      technologies: ['React', 'OpenWeather API', 'Chart.js'],
-      image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80',
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-    },
-    {
-      title: 'Analytics Command Center',
-      description: 'A data-rich dashboard for insights, metrics, and AI-powered performance reporting.',
-      technologies: ['Next.js', 'Python', 'PostgreSQL', 'D3.js'],
-      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80',
-      github: 'https://github.com',
+      title: 'Complaint Application for Police Crime Crisis Management System',
+      description: 'A individual application for manage police crimes that complained by public people',
+      technologies: ['React', 'MUI', 'Node.js', 'Express.js', 'MongoDB'],
+      image: '',
+      github: '',
       demo: 'https://demo.com',
     },
   ]
