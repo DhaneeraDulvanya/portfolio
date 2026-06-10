@@ -11,6 +11,7 @@ const Skills = () => {
         { name: 'HTML5', icon: FaHtml5, level: 90 },
         { name: 'CSS3', icon: FaCss3Alt, level: 88 },
         { name: 'Tailwind CSS', icon: SiTailwindcss, level: 80 },
+        { name: 'Material UI', icon: SiNextdotjs, level: 75 },
       ],
     },
     {
@@ -20,7 +21,6 @@ const Skills = () => {
         { name: 'Node.js', icon: FaNodeJs, level: 70 },
         { name: 'MongoDB', icon: SiMongodb, level: 70 },
         { name: 'mySQL', icon: SiMysql, level: 68 },
-        { name: 'Next.js', icon: SiNextdotjs, level: 65 },
       ],
     },
     {
@@ -28,7 +28,6 @@ const Skills = () => {
       skills: [
         { name: 'Git', icon: FaGitAlt, level: 80 },
         { name: 'Data Visualization', icon: FaPalette, level: 75 },
-        { name: 'AWS / Cloud', icon: FaAws, level: 60 },
       ],
     },
   ]
