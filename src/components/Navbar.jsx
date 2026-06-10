@@ -24,85 +24,68 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? darkMode
-            ? 'bg-gray-800 shadow-lg'
-            : 'bg-white shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${
+        darkMode ? 'bg-slate-950/90' : 'bg-white/85'
+      } ${scrolled ? 'shadow-2xl shadow-slate-950/10' : ''}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex-shrink-0">
-            <a href="#home" className="text-2xl font-bold text-primary-600">
-              Portfolio
-            </a>
+        <div className="flex h-16 items-center justify-between">
+          <a href="#home" className="text-xl font-bold uppercase tracking-[0.12em] text-slate-900 dark:text-white">
+            Dhaneera
+          </a>
+
+          <div className="hidden md:flex items-center gap-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                  darkMode
+                    ? 'text-slate-300 hover:bg-slate-900/70 hover:text-white'
+                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    darkMode
-                      ? 'text-gray-300 hover:text-white hover:bg-gray-700'
-                      : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
-                  }`}
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-3">
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-full transition-colors ${
-                darkMode
-                  ? 'text-yellow-400 hover:bg-gray-700'
-                  : 'text-gray-700 hover:bg-gray-200'
+              className={`rounded-full p-2 transition ${
+                darkMode ? 'text-amber-300 hover:bg-slate-900/70' : 'text-slate-700 hover:bg-slate-100'
               }`}
+              aria-label="Toggle dark mode"
             >
-              {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+              {darkMode ? <FaSun size={18} /> : <FaMoon size={18} />}
             </button>
 
-            {/* Mobile menu button */}
             <button
-              className={`md:hidden p-2 rounded-md ${
-                darkMode
-                  ? 'text-gray-300 hover:bg-gray-700'
-                  : 'text-gray-700 hover:bg-gray-100'
+              className={`md:hidden rounded-full p-2 transition ${
+                darkMode ? 'text-slate-300 hover:bg-slate-900/70' : 'text-slate-700 hover:bg-slate-100'
               }`}
               onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle navigation"
             >
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
-        <div
-          className={`md:hidden ${
-            darkMode ? 'bg-gray-800' : 'bg-white'
-          } border-t ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className={`md:hidden border-t ${darkMode ? 'border-slate-800 bg-slate-950/95' : 'border-slate-200 bg-white/95'}`}>
+          <div className="px-4 py-4 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block rounded-2xl px-4 py-3 text-sm font-medium transition ${
                   darkMode
-                    ? 'text-gray-300 hover:text-white hover:bg-gray-700'
-                    : 'text-gray-700 hover:text-primary-600 hover:bg-gray-100'
+                    ? 'text-slate-300 hover:bg-slate-900/80 hover:text-white'
+                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 {link.name}

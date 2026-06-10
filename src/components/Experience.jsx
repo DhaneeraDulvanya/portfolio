@@ -1,58 +1,73 @@
-import { FaGraduationCap } from 'react-icons/fa'
+import { FaGraduationCap, FaLightbulb, FaChartLine } from 'react-icons/fa'
 
 const Experience = () => {
-  const education = [
+  const timeline = [
     {
-      title: 'Bachelor\'s Degree',
-      institution: 'Sabaragamuwa University of Sri Lanka',
-      period: 'Present',
-      description: [
-        'Currently pursuing undergraduate studies in Data Science',
-        'Actively learning Programming Languages, Real World Data Analysis and Visualization',
-        'Participating in university projects and assignments',
-        'Engaging in extracurricular activities such as sports, music and tech communities',
+      title: 'Data Science Undergraduate',
+      subtitle: 'Sabaragamuwa University of Sri Lanka',
+      period: '2023 — Present',
+      icon: FaGraduationCap,
+      highlights: [
+        'Building strong analytics foundations with statistics and machine learning.',
+        'Developing data-driven applications and storytelling dashboards.',
+      ],
+    },
+    {
+      title: 'AI Capstone Project',
+      subtitle: 'Predictive model for student engagement',
+      period: '2025',
+      icon: FaLightbulb,
+      highlights: [
+        'Designed a machine learning pipeline for classification and reporting.',
+        'Used Python, Pandas, and visualization tools to communicate results.',
+      ],
+    },
+    {
+      title: 'Interactive Analytics Dashboard',
+      subtitle: 'Personal portfolio showcase',
+      period: '2025',
+      icon: FaChartLine,
+      highlights: [
+        'Created a responsive dashboard experience with modern UI patterns.',
+        'Integrated real-time metrics and polished motion design.',
       ],
     },
   ]
 
   return (
-    <section id="experience" className="section-container bg-white dark:bg-gray-800">
-      <h2 className="section-title dark:text-white">Education</h2>
-      <div className="max-w-4xl mx-auto">
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary-200 dark:bg-gray-700"></div>
-          
-          <div className="space-y-8">
-            {education.map((edu, index) => (
-              <div key={index} className="relative pl-20">
-                {/* Timeline dot */}
-                <div className="absolute left-6 top-2 w-4 h-4 bg-primary-600 dark:bg-primary-400 rounded-full border-4 border-white dark:border-gray-800"></div>
-                
-                <div className="card dark:bg-gray-700">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-primary-100 dark:bg-primary-900 rounded-lg">
-                      <FaGraduationCap className="text-primary-600 dark:text-primary-400" size={24} />
-                    </div>
+    <section id="experience" className="snap-start section-container">
+      <h2 className="section-title">Experience</h2>
+      <div className="relative mx-auto max-w-5xl">
+        <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-cyan-500 to-transparent" />
+        <div className="space-y-10">
+          {timeline.map((item, index) => {
+            const Icon = item.icon
+            return (
+              <div key={index} className="relative pl-16">
+                <div className="absolute left-0 top-2 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-white shadow-xl shadow-cyan-500/20">
+                  <Icon size={20} />
+                </div>
+                <div className="glass-panel p-8">
+                  <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-800 dark:text-white">
-                        {edu.title}
-                      </h3>
-                      <p className="text-primary-600 dark:text-primary-400 font-semibold">
-                        {edu.institution}
+                      <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{item.title}</h3>
+                      <p className="mt-2 text-sm font-medium uppercase tracking-[0.24em] text-cyan-600 dark:text-cyan-300">
+                        {item.subtitle}
                       </p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">{edu.period}</p>
                     </div>
+                    <span className="rounded-full bg-slate-100 px-4 py-2 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-200">
+                      {item.period}
+                    </span>
                   </div>
-                  <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 ml-12">
-                    {edu.description.map((item, i) => (
-                      <li key={i}>{item}</li>
+                  <ul className="mt-6 space-y-3 text-slate-600 dark:text-slate-300 list-disc list-inside">
+                    {item.highlights.map((point, idx) => (
+                      <li key={idx}>{point}</li>
                     ))}
                   </ul>
                 </div>
               </div>
-            ))}
-          </div>
+            )
+          })}
         </div>
       </div>
     </section>

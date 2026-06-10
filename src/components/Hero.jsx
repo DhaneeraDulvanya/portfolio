@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaRocket, FaStar } from 'react-icons/fa'
 import { useEffect, useState } from 'react'
 
 const Hero = () => {
@@ -15,76 +15,92 @@ const Hero = () => {
     { icon: FaEnvelope, href: 'mailto:22cds0407@ms.sab.ac.lk', label: 'Email' },
   ]
 
+  const highlights = [
+    'Machine Learning',
+    'Data Visualization',
+    'Power BI visualization',
+    'Modern Web Interfaces',
+    'Data Analytics'
+  ]
+
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-gray-900 dark:to-gray-800"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div
-          className={`transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="mb-6">
-            <div className="inline-block rounded-full bg-primary-100 dark:bg-primary-900 p-4 mb-4">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 mx-auto overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
-                {!imageError ? (
-                  <img 
-                    src="/images/pic.jpeg" 
-                    alt="Dhaneera Dulvanya" 
-                    className="w-full h-full object-cover"
-                    onError={() => setImageError(true)}
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-white text-4xl font-bold">
-                    DDM
-                  </div>
-                )}
+    <section id="home" className="snap-start min-h-screen relative overflow-hidden pt-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.18),transparent_22%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.16),transparent_20%)]" />
+      <div className="section-container relative z-10">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="space-y-8">
+            <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/70 bg-white/90 px-5 py-2 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-900/5 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100">
+              <FaStar className="text-cyan-500" />
+              Crafting intelligent experiences with modern UI design.
+            </div>
+
+            <div className={`space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className="text-5xl font-bold tracking-tight text-slate-900 dark:text-white md:text-6xl">
+                I turn data into clear analytics stories for smarter business decisions.
+              </h1>
+              <p className="max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
+                I’m Dhaneera, a Data Science undergraduate who blends AI, analytics, and polished front-end design to build intuitive digital products.
+              </p>
+
+              <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
+                {highlights.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-slate-200/80 bg-slate-100/80 px-4 py-2 text-sm font-medium text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-full bg-cyan-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-700"
+                >
+                  Get in Touch
+                </a>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-8 py-3 text-base font-semibold text-slate-900 shadow-sm transition hover:border-cyan-600 hover:text-cyan-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:hover:text-cyan-400"
+                >
+                  <FaDownload className="mr-2" /> Resume
+                </a>
               </div>
             </div>
           </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-800 dark:text-white">
-            Hi, I'm <span className="text-primary-600 dark:text-primary-400">Dhaneera Dulvanya</span>
-          </h1>
-          
-          <h2 className="text-2xl md:text-4xl font-semibold mb-6 text-gray-600 dark:text-gray-300">
-            Undergraduate Student
-          </h2>
-          
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
-            Studying at Sabaragamuwa University of Sri Lanka. Passionate about Machine learning & Data Science. Welcome to my portfolio!
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a
-              href="#contact"
-              className="px-8 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl"
-            >
-              Get In Touch
-            </a>
-            <a
-              href="/resume.pdf"
-              download
-              className="px-8 py-3 bg-white dark:bg-gray-800 text-primary-600 dark:text-primary-400 rounded-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-lg hover:shadow-xl border-2 border-primary-600 dark:border-primary-400 flex items-center gap-2"
-            >
-              <FaDownload /> Download Resume
-            </a>
-          </div>
-          
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                {...(href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
-                className="text-3xl text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                aria-label={label}
-              >
-                <Icon />
-              </a>
-            ))}
+
+          <div className="relative">
+            <div className="glass-panel p-6 shadow-2xl shadow-slate-900/10">
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/80 p-1 shadow-xl shadow-slate-900/10 dark:border-slate-700 dark:bg-slate-950/80">
+                <div className="aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-slate-200 dark:bg-slate-800">
+                  {!imageError ? (
+                    <img
+                      src="/images/pic.png"
+                      alt="Dhaneera Dulvanya"
+                      className="h-full w-full object-cover"
+                      onError={() => setImageError(true)}
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center text-5xl font-bold text-slate-500 dark:text-slate-400">
+                      D
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-3xl bg-slate-900/95 px-5 py-6 text-center text-white shadow-xl shadow-slate-900/10">
+                  <p className="text-3xl font-bold">4+</p>
+                  <p className="mt-2 text-sm uppercase tracking-[0.25em] text-slate-400">Projects Built</p>
+                </div>
+                <div className="rounded-3xl bg-cyan-600/95 px-5 py-6 text-center text-white shadow-xl shadow-cyan-500/20">
+                  <p className="text-3xl font-bold">Analytics</p>
+                  <p className="mt-2 text-sm uppercase tracking-[0.25em] text-cyan-100">Data Science Focus</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
