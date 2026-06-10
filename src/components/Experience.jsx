@@ -8,28 +8,9 @@ const Experience = () => {
       period: '2024 — Present',
       icon: FaGraduationCap,
       highlights: [
+        'Studying BSc(hons) in Data Science degree with a focus on machine learning, statistics, and data visualization.',
         'Building strong analytics foundations with statistics and machine learning.',
         'Developing data-driven applications and storytelling dashboards.',
-      ],
-    },
-    {
-      title: 'Capstone Project I',
-      subtitle: 'Predictive model for student engagement',
-      period: '2024',
-      icon: FaLightbulb,
-      highlights: [
-        'Designed a machine learning pipeline for classification and reporting.',
-        'Used Python, Pandas, and visualization tools to communicate results.',
-      ],
-    },
-    {
-      title: 'Interactive Analytics Dashboard',
-      subtitle: 'Personal portfolio showcase',
-      period: '2025',
-      icon: FaChartLine,
-      highlights: [
-        'Created a responsive dashboard experience with modern UI patterns.',
-        'Integrated real-time metrics and polished motion design.',
       ],
     },
   ]
