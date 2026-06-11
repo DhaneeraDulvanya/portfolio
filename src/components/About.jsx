@@ -72,9 +72,7 @@ const About = () => {
               </div>
             )}
           </div>
-          <div className="absolute -right-8 top-8 hidden rounded-full border border-cyan-400/40 bg-cyan-500/10 px-4 py-3 text-sm text-cyan-700 shadow-xl shadow-cyan-500/10 dark:block dark:border-cyan-500/30 dark:bg-cyan-500/10 dark:text-cyan-200">
-            AI & product creativity
-          </div>
+          
         </div>
       </div>
     </section>
