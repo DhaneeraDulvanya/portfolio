@@ -7,7 +7,7 @@ const Projects = () => {
       title: 'Complaint Application for Police Crime Crisis Management',
       description: 'A individual application for manage police crimes that complained by public people',
       technologies: ['React', 'MUI', 'Node.js', 'Express.js', 'MongoDB'],
-      image: './public/images/comp.PNG',
+      image: './images/comp.PNG',
       github: 'https://github.com/DhaneeraDulvanya/CAPCC',
       linkedIN: 'https://demo.com',
     },
