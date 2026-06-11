@@ -3,12 +3,13 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 const Projects = () => {
   const projects = [
     {
-      title: 'Complaint Application for Police Crime Crisis Management System',
+      project: 'Capstone Project I',
+      title: 'Complaint Application for Police Crime Crisis Management',
       description: 'A individual application for manage police crimes that complained by public people',
       technologies: ['React', 'MUI', 'Node.js', 'Express.js', 'MongoDB'],
-      image: '',
-      github: '',
-      demo: 'https://demo.com',
+      image: 'public/images/comp.PNG',
+      github: 'https://github.com/DhaneeraDulvanya/CAPCC',
+      linkedIN: 'https://demo.com',
     },
   ]
 
@@ -31,7 +32,7 @@ const Projects = () => {
             </div>
             <div className="mt-6">
               <p className="mb-3 text-sm uppercase tracking-[0.24em] text-cyan-600 dark:text-cyan-400">
-                Featured Project
+                {project.project}
               </p>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{project.title}</h3>
               <p className="mt-4 text-slate-600 dark:text-slate-300">{project.description}</p>
@@ -55,12 +56,13 @@ const Projects = () => {
                   <FaGithub /> GitHub
                 </a>
                 <a
-                  href={project.demo}
+                  href={project.linkedIN}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-slate-700 transition hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-400"
                 >
-                  <FaExternalLinkAlt /> Live Demo
+                  <FaExternalLinkAlt /> LinkedIn
+
                 </a>
               </div>
             </div>
