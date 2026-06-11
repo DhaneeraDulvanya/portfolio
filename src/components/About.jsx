@@ -61,7 +61,7 @@ const About = () => {
           <div className="aspect-[4/3] overflow-hidden rounded-[1.75rem] bg-slate-200 dark:bg-slate-800">
             {!imageError ? (
               <img
-                src="/images/pic.png"
+                src="./images/pic.png"
                 alt="Dhaneera Dulvanya"
                 className="h-full w-full object-cover"
                 onError={() => setImageError(true)}
