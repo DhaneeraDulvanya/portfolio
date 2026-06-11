@@ -2,7 +2,7 @@
   "name": "portfolio-profile",
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://DhaneeraDulvanya.github.io/portfolio",
+  "homepage": "https://dhaneeradulvanya.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
