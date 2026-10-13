@@ -1,77 +1,51 @@
-import { FaReact, FaNodeJs, FaPython, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaAws, FaPalette } from 'react-icons/fa'
-import { SiMongodb, SiMysql, SiTailwindcss, SiNextdotjs } from 'react-icons/si'
+import {
+  FaBrain,
+  FaCode,
+  FaDatabase,
+  FaGitAlt,
+  FaJava,
+  FaJs,
+  FaPython,
+  FaReact,
+  FaChartBar,
+  FaChartArea,
+  FaTools,
+  FaHtml5,
+  FaCss3Alt,
+  FaNodeJs,
+  FaGithub,
+} from 'react-icons/fa'
+import { SiExpress, SiMongodb, SiMysql, SiNumpy, SiPandas, SiScikitlearn, SiJupyter, SiPowerbi } from 'react-icons/si'
 
-const Skills = () => {
-  const skillCategories = [
-    {
-      title: 'Frontend Craft',
-      skills: [
-        { name: 'React', icon: FaReact, level: 85 },
-        { name: 'JavaScript', icon: FaJs, level: 80 },
-        { name: 'HTML5', icon: FaHtml5, level: 90 },
-        { name: 'CSS3', icon: FaCss3Alt, level: 88 },
-        { name: 'Tailwind CSS', icon: SiTailwindcss, level: 80 },
-        { name: 'Material UI', icon: SiNextdotjs, level: 75 },
-      ],
-    },
-    {
-      title: 'Backend & Data',
-      skills: [
-        { name: 'Python', icon: FaPython, level: 85 },
-        { name: 'Node.js', icon: FaNodeJs, level: 70 },
-        { name: 'MongoDB', icon: SiMongodb, level: 70 },
-        { name: 'mySQL', icon: SiMysql, level: 68 },
-      ],
-    },
-    {
-      title: 'Tools & Workflow',
-      skills: [
-        { name: 'Git', icon: FaGitAlt, level: 80 },
-        { name: 'Data Visualization', icon: FaPalette, level: 75 },
-      ],
-    },
-  ]
+const categories = [
+  { title: 'Programming', icon: FaCode, skills: [['Python', FaPython]] },
+  { title: 'Web development', icon: FaReact, skills: [['HTML', FaHtml5], ['CSS', FaCss3Alt], ['React.js', FaReact], ['Node.js', FaNodeJs], ['Express.js', SiExpress]] },
+  { title: 'Databases', icon: FaDatabase, skills: [['MySQL', SiMysql], ['MongoDB', SiMongodb]] },
+  { title: 'Data science', icon: FaChartBar, skills: [['Pandas', SiPandas], ['NumPy', SiNumpy], ['Scikit-learn', SiScikitlearn], ['Matplotlib', FaChartBar], ['Seaborn', FaChartArea]] },
+  { title: 'Machine learning', icon: FaBrain, skills: [['Regression', null], ['Classification', null], ['Model evaluation', null], ['Feature engineering', null], ['NLP', null], ['Time-Series Analysis', null]] },
+  { title: 'Tools & workflow', icon: FaTools, skills: [['Git', FaGitAlt], ['GitHub', FaGithub], ['Jupyter Notebook', SiJupyter], ['VS Code', FaCode], ['Power BI Desktop', SiPowerbi]] },
+]
 
-  return (
-    <section id="skills" className="snap-start section-container bg-slate-950/10 dark:bg-slate-900/70">
-      <h2 className="section-title">Skills</h2>
-      <div className="grid gap-8 md:grid-cols-3">
-        {skillCategories.map((category) => (
-          <div key={category.title} className="glass-panel p-8">
-            <h3 className="mb-6 text-2xl font-semibold text-slate-900 dark:text-white">
-              {category.title}
-            </h3>
-            <div className="space-y-5">
-              {category.skills.map((skill) => {
-                const Icon = skill.icon
-                return (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between gap-4 text-slate-700 dark:text-slate-300">
-                      <div className="flex items-center gap-3">
-                        <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-300">
-                          <Icon size={18} />
-                        </span>
-                        <span className="font-medium">{skill.name}</span>
-                      </div>
-                      <span className="text-sm font-semibold text-slate-600 dark:text-slate-200">{skill.level}%</span>
-                    </div>
-                    <div className="mt-3 h-3 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800">
-                      <div
-                        className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 transition-all duration-1000"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+const Skills = () => (
+  <section id="skills" className="section-container section section-muted" aria-labelledby="skills-title">
+    <div className="section-heading reveal">
+      <p className="eyebrow">Tools of the trade <span>02</span></p>
+      <h2 id="skills-title">A growing <span>toolkit.</span></h2>
+      <p className="section-intro">Technologies I use to explore ideas, work with data and build useful things.</p>
+    </div>
+    <div className="skills-grid">
+      {categories.map(({ title, icon: CategoryIcon, skills }) => (
+        <article className="skill-card reveal" key={title}>
+          <div className="skill-card-heading"><span className="skill-icon"><CategoryIcon aria-hidden="true" /></span><h3>{title}</h3></div>
+          <div className="skill-list">
+            {skills.map(([name, Icon]) => (
+              <span key={name}>{Icon && <Icon aria-hidden="true" />}{name}</span>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
-  )
-}
+        </article>
+      ))}
+    </div>
+  </section>
+)
 
 export default Skills
-
-

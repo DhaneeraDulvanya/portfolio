@@ -1,22 +1,35 @@
-import { FaHeart } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+import { FaArrowUp, FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTop(window.scrollY > 500)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <footer className="snap-start border-t border-slate-200/80 bg-transparent py-10 text-slate-600 dark:border-slate-800 dark:text-slate-400">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-4 px-4 sm:px-6 lg:px-8 text-center">
-        <p className="text-sm">
-          Designed for modern storytelling, polished interaction, and thoughtful data-driven visual design.
-        </p>
-        <p className="flex items-center justify-center gap-2 text-sm">
-          Made with <FaHeart className="text-rose-500" /> © {currentYear} Dhaneera. All rights reserved.
-        </p>
-      </div>
-    </footer>
+    <>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <a className="brand footer-brand" href="#home" aria-label="Dhaneera Dulvanya, back to top">
+            <span className="brand-mark">D<span>.</span></span>
+            <span className="brand-name">Dhaneera<span> Dulvanya</span></span>
+          </a>
+          <p>Thoughtfully built, one idea at a time. <span>© {new Date().getFullYear()} Dhaneera Dulvanya</span></p>
+          <div className="footer-links">
+            <a href="https://github.com/DhaneeraDulvanya" target="_blank" rel="noreferrer" aria-label="GitHub profile"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/dhaneera-dulvanya/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><FaLinkedin /></a>
+            <a className="back-top" href="#home">Back to top <FaArrowUp aria-hidden="true" /></a>
+          </div>
+        </div>
+      </footer>
+      <a className={`back-to-top${showBackToTop ? ' is-visible' : ''}`} href="#home" aria-label="Back to top"><FaArrowUp aria-hidden="true" /></a>
+    </>
   )
 }
 
 export default Footer
-
-

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,43 +9,46 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false)
-
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+    const revealElements = document.querySelectorAll('.reveal')
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealElements.forEach((element) => element.classList.add('is-visible'))
+      return undefined
     }
-  }, [darkMode])
+
+    const observer = new IntersectionObserver(
+      (entries, activeObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            activeObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -35px 0px' },
+    )
+    revealElements.forEach((element) => observer.observe(element))
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <div
-      className={`relative min-h-screen overflow-hidden transition-colors duration-500 ${
-        darkMode ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
-      }`}
-    >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-16 top-16 h-72 w-72 rounded-full bg-cyan-400/25 blur-3xl animate-float" />
-        <div className="absolute right-0 top-1/4 h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl animate-floatSlow" />
-        <div className="absolute left-1/2 bottom-0 h-96 w-96 -translate-x-1/2 rounded-full bg-slate-900/10 dark:bg-sky-500/15 blur-3xl" />
-      </div>
-
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-
-      <main className="relative z-10 snap-y snap-mandatory scroll-smooth">
+    <div className="site-shell">
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <Navbar />
+      <main id="main-content">
         <Hero />
         <About />
         <Skills />
         <Experience />
         <Projects />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </div>
   )
 }
 
 export default App
-
-

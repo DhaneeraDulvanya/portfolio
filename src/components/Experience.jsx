@@ -1,60 +1,43 @@
-import { FaGraduationCap, FaLightbulb, FaChartLine } from 'react-icons/fa'
+import { FaBookmark, FaDumbbell, FaGuitar, FaLightbulb, FaGraduationCap, FaHandRock } from 'react-icons/fa'
 
-const Experience = () => {
-  const timeline = [
-    {
-      title: 'Data Science Undergraduate',
-      subtitle: 'Sabaragamuwa University of Sri Lanka',
-      period: '2024 — Present',
-      icon: FaGraduationCap,
-      highlights: [
-        'Studying BSc(hons) in Data Science degree with a focus on machine learning, statistics, and data visualization.',
-        'Building strong analytics foundations with statistics and machine learning.',
-        'Developing data-driven applications and storytelling dashboards.',
-      ],
-    },
-  ]
+const softSkills = ['Problem-solving', 'Team collaboration', 'Communication', 'Critical thinking', 'Adaptability', 'Time management']
 
-  return (
-    <section id="experience" className="snap-start section-container">
-      <h2 className="section-title">Experience</h2>
-      <div className="relative mx-auto max-w-5xl">
-        <div className="absolute left-6 top-0 h-full w-px bg-gradient-to-b from-cyan-500 to-transparent" />
-        <div className="space-y-10">
-          {timeline.map((item, index) => {
-            const Icon = item.icon
-            return (
-              <div key={index} className="relative pl-16">
-                <div className="absolute left-0 top-2 flex h-12 w-12 items-center justify-center rounded-full bg-cyan-600 text-white shadow-xl shadow-cyan-500/20">
-                  <Icon size={20} />
-                </div>
-                <div className="glass-panel p-8">
-                  <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{item.title}</h3>
-                      <p className="mt-2 text-sm font-medium uppercase tracking-[0.24em] text-cyan-600 dark:text-cyan-300">
-                        {item.subtitle}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-slate-100 px-4 py-2 text-sm text-slate-700 dark:bg-slate-800 dark:text-slate-200">
-                      {item.period}
-                    </span>
-                  </div>
-                  <ul className="mt-6 space-y-3 text-slate-600 dark:text-slate-300 list-disc list-inside">
-                    {item.highlights.map((point, idx) => (
-                      <li key={idx}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          })}
+const Experience = () => (
+  <section id="experience" className="section-container section section-muted" aria-labelledby="education-title">
+    <div className="section-heading reveal">
+      <p className="eyebrow">The foundations <span>04</span></p>
+      <h2 id="education-title">Learning with <span>purpose.</span></h2>
+    </div>
+    <div className="education-layout">
+      <article className="education-card reveal">
+        <div className="education-marker"><FaGraduationCap aria-hidden="true" /></div>
+        <div className="education-details">
+          <p className="fact-label">Undergraduate degree <span className="education-date">2024 — Present</span></p>
+          <h3>BSc (Hons) in Data Science</h3>
+          <p className="education-school">Sabaragamuwa University of Sri Lanka</p>
+          <p>Developing a grounding in data science, with interests spanning machine learning, data analytics and intelligent software.</p>
+          <div className="tag-list"><span>Machine learning</span><span>Data analytics</span><span>Artificial intelligence</span></div>
         </div>
+      </article>
+      <aside className="achievement-card reveal">
+        <p className="fact-label">Beyond the classroom</p>
+        <h3>Achievements &amp; certifications</h3>
+        <p>This section is ready for verified certifications, competition results and sporting milestones.</p>
+        <div className="achievement-placeholder"><FaBookmark aria-hidden="true" /><span>Add an achievement when it’s ready to share.</span></div>
+      </aside>
+    </div>
+    <div className="soft-skills reveal">
+      <p className="eyebrow">How I work</p>
+      <div className="soft-skill-list">{softSkills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+      <p className="eyebrow interest-label">Outside the dataset</p>
+      <div className="interest-list">
+        <span><FaHandRock aria-hidden="true" /> Karate</span>
+        <span><FaGuitar aria-hidden="true" /> Guitar</span>
+        <span><FaDumbbell aria-hidden="true" /> Fitness</span>
+        <span><FaLightbulb aria-hidden="true" /> Technology</span>
       </div>
-    </section>
-  )
-}
+    </div>
+  </section>
+)
 
 export default Experience
-
-

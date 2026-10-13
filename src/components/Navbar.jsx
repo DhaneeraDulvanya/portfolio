@@ -1,103 +1,94 @@
-import { useState, useEffect } from 'react'
-import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa'
+import { useEffect, useState } from 'react'
+import { FaArrowDown, FaBars, FaTimes } from 'react-icons/fa'
 
-const Navbar = ({ darkMode, setDarkMode }) => {
+const navLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Education', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
+]
+
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+
+    const sections = navLinks
+      .map(({ href }) => document.querySelector(href))
+      .filter(Boolean)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(`#${entry.target.id}`)
+        })
+      },
+      { rootMargin: '-30% 0px -60% 0px' },
+    )
+    sections.forEach((section) => observer.observe(section))
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      observer.disconnect()
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Education', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
-  ]
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') setIsOpen(false)
+    }
+    window.addEventListener('keydown', handleEscape)
+    return () => window.removeEventListener('keydown', handleEscape)
+  }, [])
+
+  const closeMenu = () => setIsOpen(false)
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300 ${
-        darkMode ? 'bg-slate-950/90' : 'bg-white/85'
-      } ${scrolled ? 'shadow-2xl shadow-slate-950/10' : ''}`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <a href="#home" className="text-xl font-bold uppercase tracking-[0.12em] text-slate-900 dark:text-white">
-            Dhaneera
+    <header className={`site-header${scrolled ? ' is-scrolled' : ''}`}>
+      <nav className="nav-shell" aria-label="Main navigation">
+        <a className="brand" href="#home" onClick={closeMenu} aria-label="Dhaneera Dulvanya, home">
+          <span className="brand-mark">D<span>.</span></span>
+          <span className="brand-name">Dhaneera<span> Dulvanya</span></span>
+        </a>
+
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        <div className={`nav-content${isOpen ? ' is-open' : ''}`} id="primary-navigation">
+          <ul className="nav-links">
+            {navLinks.map(({ name, href }) => (
+              <li key={href}>
+                <a
+                  className={`nav-link${activeSection === href ? ' is-active' : ''}`}
+                  href={href}
+                  aria-current={activeSection === href ? 'location' : undefined}
+                  onClick={closeMenu}
+                >
+                  {name}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <a className="button button-small button-outline nav-cv" href="/portfolio/assets/Dhaneera_Resume.pdf" download>
+            <FaArrowDown aria-hidden="true" /> Download CV
           </a>
-
-          <div className="hidden md:flex items-center gap-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
-                  darkMode
-                    ? 'text-slate-300 hover:bg-slate-900/70 hover:text-white'
-                    : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className={`rounded-full p-2 transition ${
-                darkMode ? 'text-amber-300 hover:bg-slate-900/70' : 'text-slate-700 hover:bg-slate-100'
-              }`}
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <FaSun size={18} /> : <FaMoon size={18} />}
-            </button>
-
-            <button
-              className={`md:hidden rounded-full p-2 transition ${
-                darkMode ? 'text-slate-300 hover:bg-slate-900/70' : 'text-slate-700 hover:bg-slate-100'
-              }`}
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle navigation"
-            >
-              {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-            </button>
-          </div>
         </div>
-      </div>
-
-      {isOpen && (
-        <div className={`md:hidden border-t ${darkMode ? 'border-slate-800 bg-slate-950/95' : 'border-slate-200 bg-white/95'}`}>
-          <div className="px-4 py-4 space-y-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`block rounded-2xl px-4 py-3 text-sm font-medium transition ${
-                  darkMode
-                    ? 'text-slate-300 hover:bg-slate-900/80 hover:text-white'
-                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      )}
-    </nav>
+      </nav>
+    </header>
   )
 }
 
 export default Navbar
-
-

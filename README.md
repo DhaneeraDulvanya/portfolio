@@ -1,98 +1,27 @@
-# Portfolio Profile
+# Dhaneera Dulvanya Portfolio
 
-A modern, responsive portfolio website built with React and Tailwind CSS.
+A responsive personal portfolio built with React, Vite and Tailwind CSS.
 
-## Features
+## Run locally
 
-- 🎨 Modern and beautiful UI design
-- 📱 Fully responsive (mobile, tablet, desktop)
-- 🌙 Dark mode toggle
-- ⚡ Fast and optimized with Vite
-- 🎯 Smooth scrolling navigation
-- 📧 Contact form
-- 🚀 Easy to customize
+1. Install Node.js (v16 or newer).
+2. Install dependencies with `npm install`.
+3. Run `npm run dev` and open the local URL printed by Vite.
+4. Build for production with `npm run build`. Vite writes the site to `dist`.
 
-## Sections
+The React app entry is `src/main.jsx`; page sections are composed in `src/App.jsx` and implemented in `src/components/`. Shared styling lives in `src/index.css`. Vite uses the `/portfolio/` base path for the existing GitHub Pages deployment.
 
-- **Hero**: Introduction and call-to-action
-- **About**: Personal information and background
-- **Skills**: Technical skills with progress bars
-- **Experience**: Work experience timeline
-- **Projects**: Portfolio projects showcase
-- **Contact**: Contact form and information
+## Personal files and content
 
-## Getting Started
+- Replace `public/images/pic.png` with your profile image, or update the image path in `src/components/Hero.jsx`.
+- Add your CV as `public/assets/Dhaneera_Resume.pdf`. The header and hero download links already point to that path.
+- Update personal details and projects in the corresponding components in `src/components/`.
+- Only the CAPCC repository link is currently published. Add project source or live-demo links to `src/components/Projects.jsx` after those links are verified; concept cards intentionally have no source or demo links.
 
-### Prerequisites
+## EmailJS contact form
 
-- Node.js (v16 or higher)
-- npm or yarn
+The contact form uses the existing `@emailjs/browser` dependency. In `src/components/Contact.jsx`, replace `YOUR_EMAILJS_SERVICE_ID`, `YOUR_EMAILJS_TEMPLATE_ID` and `YOUR_EMAILJS_PUBLIC_KEY` with the values from your EmailJS account. Configure the template with the form fields `from_name`, `from_email`, `subject`, and `message`, as well as `to_name` and `reply_to`. The UI shows success only when EmailJS returns HTTP status 200. Until the placeholders are replaced, the form directs visitors to the published email address.
 
-### Installation
+## GitHub Pages
 
-1. Clone or download this repository
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open your browser and navigate to `http://localhost:5173`
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` directory.
-
-## Customization
-
-### Personal Information
-
-1. **Hero Section** (`src/components/Hero.jsx`):
-   - Update name, title, and description
-   - Replace placeholder image/initials
-   - Update social media links
-
-2. **About Section** (`src/components/About.jsx`):
-   - Update bio and statistics
-   - Add your photo
-
-3. **Skills** (`src/components/Skills.jsx`):
-   - Modify skill categories and levels
-   - Add or remove skills
-
-4. **Experience** (`src/components/Experience.jsx`):
-   - Update work experience entries
-
-5. **Projects** (`src/components/Projects.jsx`):
-   - Add your projects with images, descriptions, and links
-
-6. **Contact** (`src/components/Contact.jsx`):
-   - Update contact information
-   - Connect form to your email service (e.g., EmailJS, Formspree)
-
-### Styling
-
-- Colors can be customized in `tailwind.config.js`
-- Global styles are in `src/index.css`
-
-## Technologies Used
-
-- React 18
-- Vite
-- Tailwind CSS
-- React Icons
-
-## License
-
-This project is open source and available under the MIT License.
-
-
+The existing `npm run deploy` script publishes `dist` with `gh-pages`. It runs `npm run build` before deployment.

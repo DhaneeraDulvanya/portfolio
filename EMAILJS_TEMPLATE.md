@@ -124,6 +124,10 @@ New Contact Form Message from {{from_name}}
                 </span>
             </div>
             <div class="info-row">
+                <span class="info-label">Subject:</span>
+                <span class="info-value">{{subject}}</span>
+            </div>
+            <div class="info-row">
                 <span class="info-label">To:</span>
                 <span class="info-value">{{to_name}}</span>
             </div>
@@ -150,6 +154,7 @@ New Contact Form Message
 From: {{from_name}}
 Email: {{from_email}}
 To: {{to_name}}
+Subject: {{subject}}
 
 Message:
 {{message}}
@@ -164,22 +169,23 @@ Reply directly to: {{from_email}}
 1. **Go to EmailJS Dashboard**: https://dashboard.emailjs.com/admin/template
 2. **Click "Create New Template"**
 3. **Template Name**: "Portfolio Contact Form"
-4. **Service**: Select your service (service_52lkgym)
+4. **Service**: Select the EmailJS service you configured
 5. **Subject**: Copy the subject line above
 6. **Content**: 
    - Choose "HTML" format
    - Paste the HTML template code above
 7. **Click "Save"**
 8. **Copy the Template ID** from the template settings
-9. **Add Template ID to your code**:
-   - Update `TEMPLATE_ID` in Contact.jsx or add to `.env` file
+9. **Set Reply-To** to `{{reply_to}}` in the template's email settings
+10. **Add the EmailJS IDs** to `emailJsConfig` at the top of `src/components/Contact.jsx`
 
 ## Template Variables Used:
 - `{{from_name}}` - Sender's name
 - `{{from_email}}` - Sender's email address
+- `{{subject}}` - Subject entered in the portfolio form
 - `{{message}}` - Message content
 - `{{to_name}}` - Your name (Dhaneera)
+- `{{reply_to}}` - Sender's reply address
 
 ## Testing:
-After setting up, test the form to ensure emails are received correctly formatted.
-
+Replace the `YOUR_EMAILJS_SERVICE_ID`, `YOUR_EMAILJS_TEMPLATE_ID`, and `YOUR_EMAILJS_PUBLIC_KEY` placeholders in `src/components/Contact.jsx`. After setup, test the form to ensure emails are received correctly formatted. The portfolio only reports success when EmailJS confirms the send.

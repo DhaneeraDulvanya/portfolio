@@ -1,78 +1,93 @@
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaGithub, FaLightbulb } from 'react-icons/fa'
 
-const Projects = () => {
-  const projects = [
-    {
-      project: 'Capstone Project I',
-      title: 'Complaint Application for Police Crime Crisis Management',
-      description: 'A individual application for manage police crimes that complained by public people',
-      technologies: ['React', 'MUI', 'Node.js', 'Express.js', 'MongoDB'],
-      image: './images/comp.PNG',
-      github: 'https://github.com/DhaneeraDulvanya/CAPCC',
-      linkedIN: 'https://demo.com',
-    },
-  ]
+const projects = [
+  {
+    category: 'Machine learning · Featured project',
+    title: 'Real Estate Price Prediction & Market Analysis',
+    description: 'An XGBoost regression project concept for exploring property value, with a React interface, FastAPI service and SHAP-based model explanations.',
+    technologies: ['XGBoost', 'SHAP', 'React', 'FastAPI'],
+    art: 'art-real-estate',
+    status: 'Project details coming soon',
+    idea: true,
+  },
+  {
+    category: 'Concept · Natural language processing',
+    title: 'AI-powered CV & Job Matching',
+    description: 'A project idea for comparing resume content with job descriptions and surfacing relevant skills and potential matches.',
+    technologies: ['NLP', 'Text analysis', 'Machine learning'],
+    art: 'art-matching',
+    status: 'Idea in exploration',
+    idea: true,
+  },
+  {
+    category: 'Exploration · Graph theory',
+    title: 'Karate Tournament Graph Analyzer',
+    description: 'A graph theory application concept for modelling tournament relationships and exploring scheduling and competition analysis.',
+    technologies: ['Graph theory', 'Algorithms', 'Data analysis'],
+    art: 'art-karate',
+    status: 'Idea in exploration',
+    idea: true,
+  },
+  {
+    category: 'Personal project · Web development',
+    title: 'Personal Portfolio Website',
+    description: 'A responsive portfolio built to bring together my studies, technical interests and project work in one place.',
+    technologies: ['React', 'Tailwind CSS', 'JavaScript'],
+    art: 'art-portfolio',
+    status: 'You’re viewing it',
+    idea: false,
+  },
+  {
+    category: 'Built project · Full-stack application',
+    title: 'Police Crime Crisis Management',
+    description: 'A public-facing application for managing crime complaints, built as a capstone project with React, Node.js, Express and MongoDB.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
+    art: 'art-civic',
+    status: 'View source',
+    href: 'https://github.com/DhaneeraDulvanya/CAPCC',
+    image: '/portfolio/images/comp.PNG',
+  },
+]
 
-  return (
-    <section id="projects" className="snap-start section-container bg-slate-50 dark:bg-slate-950">
-      <h2 className="section-title">Projects</h2>
-      <div className="grid gap-8 md:grid-cols-2">
-        {projects.map((project, index) => (
-          <article
-            key={index}
-            className="group relative overflow-hidden rounded-[2rem] border border-slate-200/70 bg-white/90 p-6 shadow-2xl shadow-slate-900/5 transition duration-500 hover:-translate-y-2 hover:shadow-2xl dark:border-slate-800/70 dark:bg-slate-950/80"
-          >
-            <div className="relative overflow-hidden rounded-[1.75rem] bg-slate-200 shadow-inner shadow-slate-900/5">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-            </div>
-            <div className="mt-6">
-              <p className="mb-3 text-sm uppercase tracking-[0.24em] text-cyan-600 dark:text-cyan-400">
-                {project.project}
-              </p>
-              <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">{project.title}</h3>
-              <p className="mt-4 text-slate-600 dark:text-slate-300">{project.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-slate-300/70 bg-slate-100/70 px-3 py-1 text-xs font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
+const Projects = () => (
+  <section id="projects" className="section-container section" aria-labelledby="projects-title">
+    <div className="section-heading section-heading-row reveal">
+      <div><p className="eyebrow">Selected work <span>03</span></p><h2 id="projects-title">Ideas in <span>progress.</span></h2></div>
+      <p className="section-intro">A mix of hands-on work and concepts I’m excited to explore. Source links appear only where a repository is available.</p>
+    </div>
+    <div className="projects-grid">
+      {projects.map((project) => (
+        <article className={`project-card reveal${project.image ? ' project-real' : ''}`} key={project.title}>
+          <div className={`project-art ${project.art}`} aria-label={project.image ? `Screenshot of ${project.title}` : undefined}>
+            {project.image ? (
+              <img src={project.image} alt={`${project.title} application interface`} loading="lazy" />
+            ) : (
+              <div className="project-art-placeholder" aria-hidden="true">
+                {project.art === 'art-real-estate' && <><span className="art-label">PRICE INDEX / MARKET SIGNALS</span><span className="art-chart"><i /><i /><i /><i /><i /><i /><i /><i /></span></>}
+                {project.art === 'art-matching' && <><span className="art-document">CV</span><span className="art-match">84%<small>MATCH</small></span><span className="art-document">ROLE</span></>}
+                {project.art === 'art-karate' && <span className="art-graph">A ─── B ─── C<br /> ╲ &nbsp; ╳ &nbsp; ╱<br /> D ─── E ─── F</span>}
+                {project.art === 'art-portfolio' && <span className="art-window"><i /><i /><i /><b>Curiosity,<br />meet code.</b></span>}
               </div>
-              <div className="mt-6 flex items-center gap-3">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-700 transition hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-400"
-                >
-                  <FaGithub /> GitHub
-                </a>
-                <a
-                  href={project.linkedIN}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-700 transition hover:text-cyan-600 dark:text-slate-200 dark:hover:text-cyan-400"
-                >
-                  <FaExternalLinkAlt /> LinkedIn
-
-                </a>
-              </div>
+            )}
+            <span className="art-corner">{project.art === 'art-real-estate' ? '01 / DATA' : project.art === 'art-matching' ? '02 / NLP' : project.art === 'art-karate' ? '03 / GRAPH THEORY' : project.art === 'art-portfolio' ? '04 / WEB' : '05 / FULL STACK'}</span>
+          </div>
+          <div className="project-content">
+            <p className="project-type">{project.category}</p>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <div className="tag-list">{project.technologies.map((technology) => <span key={technology}>{technology}</span>)}</div>
+            <div className="project-links">
+              {project.href ? (
+                <a className="project-source" href={project.href} target="_blank" rel="noreferrer"><FaGithub aria-hidden="true" /> View source <FaExternalLinkAlt aria-hidden="true" /></a>
+              ) : (
+                <span className="project-status">{project.idea ? <FaLightbulb aria-hidden="true" /> : <span className="status-dot" />}{project.status}</span>
+              )}
             </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+)
 
 export default Projects
-
-
