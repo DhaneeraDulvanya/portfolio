@@ -3,11 +3,12 @@ import { FaExternalLinkAlt, FaGithub, FaLightbulb } from 'react-icons/fa'
 const projects = [
   {
     category: 'Machine learning · Featured project',
-    title: 'Real Estate Price Prediction & Market Analysis',
+    title: 'Real Estate AI',
     description: 'An XGBoost regression project concept for exploring property value, with a React interface, FastAPI service and SHAP-based model explanations.',
     technologies: ['XGBoost', 'SHAP', 'React', 'FastAPI'],
     art: 'art-real-estate',
-    status: 'Project details coming soon',
+    status: 'View source',
+    href: 'https://github.com/DhaneeraDulvanya/Sri-Lankan-Land-Price-Prediction-and-Real-Estate-Market-Analysis-System',
     idea: true,
   },
   {
@@ -21,11 +22,12 @@ const projects = [
   },
   {
     category: 'Exploration · Graph theory',
-    title: 'Karate Tournament Graph Analyzer',
+    title: 'KaratGraph',
     description: 'A graph theory application concept for modelling tournament relationships and exploring scheduling and competition analysis.',
     technologies: ['Graph theory', 'Algorithms', 'Data analysis'],
     art: 'art-karate',
-    status: 'Idea in exploration',
+    status: 'View Source',
+    href: "https://github.com/DhaneeraDulvanya/KaratGraph",
     idea: true,
   },
   {
