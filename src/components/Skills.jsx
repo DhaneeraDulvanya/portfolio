@@ -3,8 +3,6 @@ import {
   FaCode,
   FaDatabase,
   FaGitAlt,
-  FaJava,
-  FaJs,
   FaPython,
   FaReact,
   FaChartBar,
@@ -14,11 +12,12 @@ import {
   FaCss3Alt,
   FaNodeJs,
   FaGithub,
+  FaSquareFull,
 } from 'react-icons/fa'
 import { SiExpress, SiMongodb, SiMysql, SiNumpy, SiPandas, SiScikitlearn, SiJupyter, SiPowerbi } from 'react-icons/si'
 
 const categories = [
-  { title: 'Programming', icon: FaCode, skills: [['Python', FaPython]] },
+  { title: 'Programming', icon: FaCode, skills: [['Python', FaPython], ['SQL', FaDatabase]] },
   { title: 'Web development', icon: FaReact, skills: [['HTML', FaHtml5], ['CSS', FaCss3Alt], ['React.js', FaReact], ['Node.js', FaNodeJs], ['Express.js', SiExpress]] },
   { title: 'Databases', icon: FaDatabase, skills: [['MySQL', SiMysql], ['MongoDB', SiMongodb]] },
   { title: 'Data science', icon: FaChartBar, skills: [['Pandas', SiPandas], ['NumPy', SiNumpy], ['Scikit-learn', SiScikitlearn], ['Matplotlib', FaChartBar], ['Seaborn', FaChartArea]] },
