@@ -82,7 +82,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <a className="button button-small button-outline nav-cv" href="/portfolio/assets/Dhaneera_Resume.pdf" download>
+          <a className="button button-small button-outline nav-cv" href="/portfolio/DhaneeraMalawaraArachchi.pdf" download>
             <FaArrowDown aria-hidden="true" /> Download CV
           </a>
         </div>
