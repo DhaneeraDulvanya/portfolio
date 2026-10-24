@@ -24,4 +24,4 @@ The contact form uses the existing `@emailjs/browser` dependency. In `src/compon
 
 ## GitHub Pages
 
-The existing `npm run deploy` script publishes `dist` with `gh-pages`. It runs `npm run build` before deployment.
+Run `npm run deploy` from `main` to build the site and publish the contents of `dist` to the `gh-pages` branch. The `predeploy` script runs `npm run build` before deployment.
