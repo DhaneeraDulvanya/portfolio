@@ -4,7 +4,7 @@ const facts = [
   {
     icon: FaGraduationCap,
     label: 'Currently studying',
-    title: 'BSc (Hons) in Data Science',
+    title: 'BSc.(Hons) in Data Science',
     detail: 'Sabaragamuwa University of Sri Lanka',
   },
   {
