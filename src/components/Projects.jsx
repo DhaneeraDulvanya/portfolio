@@ -11,7 +11,7 @@ const projects = [
     href: 'https://github.com/DhaneeraDulvanya/Sri-Lankan-Land-Price-Prediction-and-Real-Estate-Market-Analysis-System',
     idea: true,
   },
-  {
+  /* {
     category: 'Concept · Natural language processing',
     title: 'AI-powered CV & Job Matching',
     description: 'A project idea for comparing resume content with job descriptions and surfacing relevant skills and potential matches.',
@@ -19,7 +19,7 @@ const projects = [
     art: 'art-matching',
     status: 'Idea in exploration',
     idea: true,
-  },
+  }, */
   {
     category: 'Exploration · Graph theory',
     title: 'KaratGraph',
@@ -39,7 +39,7 @@ const projects = [
     status: 'You’re viewing it',
     idea: false,
   },
-  {
+  /* {
     category: 'Built project · Full-stack application',
     title: 'Police Crime Crisis Management',
     description: 'A public-facing application for managing crime complaints, built as a capstone project with React, Node.js, Express and MongoDB.',
@@ -48,7 +48,7 @@ const projects = [
     status: 'View source',
     href: 'https://github.com/DhaneeraDulvanya/CAPCC',
     image: '/portfolio/images/comp.PNG',
-  },
+  },*/ 
 ]
 
 const Projects = () => (
