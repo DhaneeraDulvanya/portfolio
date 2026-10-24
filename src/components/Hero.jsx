@@ -13,12 +13,12 @@ const Hero = () => (
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="#projects">Explore my projects <FaArrowRight aria-hidden="true" /></a>
-          <a className="button button-text" href="/portfolio/assets/Dhaneera_Resume.pdf" download><FaDownload aria-hidden="true" /> Download CV</a>
+          <a className="button button-text" href="/portfolio/assets/DhaneeraMalawaraArachchi.pdf" download><FaDownload aria-hidden="true" /> Download CV</a>
         </div>
         <div className="hero-socials" aria-label="Social profiles">
           <span className="social-caption">Find me on</span>
           <a className="icon-link" href="https://github.com/DhaneeraDulvanya" target="_blank" rel="noreferrer" aria-label="GitHub profile"><FaGithub /></a>
-          <a className="icon-link" href="https://www.linkedin.com/in/dhaneera-dulvanya/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><FaLinkedin /></a>
+          <a className="icon-link" href="https://www.linkedin.com/in/dhaneeradulvanya/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile"><FaLinkedin /></a>
         </div>
       </div>
       <div className="hero-visual" aria-label="Portrait of Dhaneera Dulvanya">
