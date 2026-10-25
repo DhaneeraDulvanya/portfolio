@@ -24,7 +24,7 @@ const Hero = () => (
       <div className="hero-visual" aria-label="Portrait of Dhaneera Dulvanya">
         <div className="orbit orbit-one" />
         <div className="orbit orbit-two" />
-        <div className="portrait-frame"><img src="/portfolio/images/pic.png" alt="Dhaneera Dulvanya" /></div>
+        <div className="portrait-frame"><img src="/portfolio/images/Dhaneera-professional.png" alt="Dhaneera Dulvanya" /></div>
         <div className="visual-coordinate coordinate-top">06° 54' N <span>80° 46' E</span></div>
         <div className="visual-coordinate coordinate-bottom"><span className="coordinate-line" />DS / AI / BUILD</div>
         <div className="visual-node node-one" />
