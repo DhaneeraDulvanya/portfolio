@@ -3,13 +3,13 @@ import { FaArrowRight, FaExternalLinkAlt, FaEnvelope, FaGithub, FaLinkedin } fro
 import emailjs from '@emailjs/browser'
 
 const emailJsConfig = {
-  serviceId: 'YOUR_EMAILJS_SERVICE_ID',
-  templateId: 'YOUR_EMAILJS_TEMPLATE_ID',
-  publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
+  serviceId: 'service_ena07yv',
+  templateId: 'template_mwcenhb',
+  publicKey: 'yP_HfFyjDVtRWmq6d',
 }
 
 const contactLinks = [
-  { icon: FaEnvelope, eyebrow: 'Write me an email', label: '22cds0407@ms.sab.ac.lk', href: 'mailto:22cds0407@ms.sab.ac.lk' },
+  { icon: FaEnvelope, eyebrow: 'Write me an email', label: 'dhaneeradulvanya0407@gmail.com', href: 'mailto:dhaneeradulvanya0407@gmail.com' },
   { icon: FaGithub, eyebrow: 'Follow my work', label: 'GitHub', href: 'https://github.com/DhaneeraDulvanya' },
   { icon: FaLinkedin, eyebrow: 'Let’s connect', label: 'LinkedIn', href: 'https://www.linkedin.com/in/dhaneera-dulvanya/' },
 ]
