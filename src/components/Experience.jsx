@@ -1,4 +1,4 @@
-import { FaBookmark, FaDumbbell, FaGuitar, FaLightbulb, FaGraduationCap, FaHandRock } from 'react-icons/fa'
+import { FaCertificate, FaDumbbell, FaGuitar, FaLightbulb, FaGraduationCap, FaHandRock } from 'react-icons/fa'
 
 const softSkills = ['Problem-solving', 'Team collaboration', 'Communication', 'Critical thinking', 'Adaptability', 'Time management']
 
@@ -20,10 +20,19 @@ const Experience = () => (
         </div>
       </article>
       <aside className="achievement-card reveal">
-        <p className="fact-label">Beyond the classroom</p>
-        <h3>Achievements &amp; certifications</h3>
-        <p>This section is ready for verified certifications, competition results and sporting milestones.</p>
-        <div className="achievement-placeholder"><FaBookmark aria-hidden="true" /><span>Add an achievement when it’s ready to share.</span></div>
+        <p className="fact-label">Professional development</p>
+        <h3>Professional certificates</h3>
+        <ul className="certificate-list">
+          <li><FaCertificate aria-hidden="true" /><span>Google AI Essentials <small>Google</small></span></li>
+          <li><FaCertificate aria-hidden="true" /><span>Python for Beginners <small>University of Moratuwa</small></span></li>
+          <li><FaCertificate aria-hidden="true" /><span>Introduction to Data Analytics <small>Simplilearn</small></span></li>
+          <li><FaCertificate aria-hidden="true" /><span>Introduction to Cyber Security <small>Simplilearn</small></span></li>
+        </ul>
+      </aside>
+      <aside className="achievement-card achievements-card reveal">
+        <p className="fact-label">Milestones</p>
+        <h3>Achievements</h3>
+        <p className="achievements-empty">Academic, project, competition, and personal achievements will be highlighted here.</p>
       </aside>
     </div>
     <div className="soft-skills reveal">
