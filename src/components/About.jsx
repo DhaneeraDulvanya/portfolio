@@ -39,6 +39,13 @@ const About = () => (
           Away from my screen, I practise Karate, pick up my guitar, make time for fitness and stay curious about what I can learn next.
         </p>
         <a className="inline-link" href="#contact">A little more about working together <span aria-hidden="true">→</span></a>
+        <figure className="about-portrait reveal">
+          <img src="/portfolio/images/normal.png" alt="Dhaneera Dulvanya" loading="lazy" />
+          <figcaption>
+            <span className="fact-label">My mindset</span>
+            <strong>It’s me.<br />Nothing is impossible.</strong>
+          </figcaption>
+        </figure>
       </div>
       <div className="about-facts">
         {facts.map(({ icon: Icon, label, title, detail }, index) => (
