@@ -2,6 +2,16 @@ import { FaExternalLinkAlt, FaGithub, FaLightbulb } from 'react-icons/fa'
 
 const projects = [
   {
+    category: 'Full-stack · E-commerce',
+    title: 'BookRush',
+    description: 'A full-stack online bookstore built for university students and nearby communities, featuring book browsing, search and filtering, a shopping cart, checkout, and admin order management.',
+    technologies: ['React.js', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
+    art: 'art-bookrush',
+    status: 'View Source',
+    href: 'https://github.com/DhaneeraDulvanya/bookRush',
+    idea: false,
+  },
+  {
     category: 'Machine learning · Featured project',
     title: 'Real Estate AI',
     description: 'An XGBoost regression project concept for exploring property value, with a React interface, FastAPI service and SHAP-based model explanations.',
@@ -48,7 +58,7 @@ const projects = [
     status: 'View source',
     href: 'https://github.com/DhaneeraDulvanya/CAPCC',
     image: '/portfolio/images/comp.PNG',
-  },*/ 
+  },*/
 ]
 
 const Projects = () => (
@@ -67,11 +77,32 @@ const Projects = () => (
               <div className="project-art-placeholder" aria-hidden="true">
                 {project.art === 'art-real-estate' && <><span className="art-label">PRICE INDEX / MARKET SIGNALS</span><span className="art-chart"><i /><i /><i /><i /><i /><i /><i /><i /></span></>}
                 {project.art === 'art-matching' && <><span className="art-document">CV</span><span className="art-match">84%<small>MATCH</small></span><span className="art-document">ROLE</span></>}
+                {project.art === 'art-bookrush' && (
+                  <div className="art-bookrush-preview">
+                    <div className="art-bookrush-header">
+                      <span className="art-bookrush-logo"><i>BR</i> BOOKRUSH</span>
+                      <span className="art-bookrush-cart">CART <b>3</b></span>
+                    </div>
+                    <div className="art-bookrush-main">
+                      <div className="art-bookrush-copy">
+                        <span className="art-bookrush-tagline">FUEL YOUR MIND</span>
+                        <strong>Find your next<br />great read.</strong>
+                        <span className="art-bookrush-search">⌕ &nbsp; Search books...</span>
+                      </div>
+                      <div className="art-bookrush-covers">
+                        <span className="art-bookrush-cover art-bookrush-cover-one"><b>THE<br />ATLAS<br />OF<br />DREAMS</b></span>
+                        <span className="art-bookrush-cover art-bookrush-cover-two"><b>DESIGN<br />BETTER</b></span>
+                        <span className="art-bookrush-cover art-bookrush-cover-three"><b>WILD<br />PLACES</b></span>
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {project.art === 'art-karate' && <span className="art-graph">A ─── B ─── C<br /> ╲ &nbsp; ╳ &nbsp; ╱<br /> D ─── E ─── F</span>}
                 {project.art === 'art-portfolio' && <span className="art-window"><i /><i /><i /><b>Curiosity,<br />meet code.</b></span>}
+                
               </div>
             )}
-            <span className="art-corner">{project.art === 'art-real-estate' ? '01 / DATA' : project.art === 'art-matching' ? '02 / NLP' : project.art === 'art-karate' ? '03 / GRAPH THEORY' : project.art === 'art-portfolio' ? '04 / WEB' : '05 / FULL STACK'}</span>
+            <span className="art-corner">{project.art === 'art-bookrush' ? '01 / Book' : project.art === 'art-real-estate' ? '02 / DATA' : project.art === 'art-karate' ? '03 / GRAPH THEORY' : project.art === 'art-portfolio' ? '04 / WEB' : '05 / FULL STACK'}</span>
           </div>
           <div className="project-content">
             <p className="project-type">{project.category}</p>
