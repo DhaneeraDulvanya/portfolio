@@ -28,6 +28,15 @@ const About = () => (
       <h2 id="about-title">Curiosity, meet <span>code.</span></h2>
     </div>
     <div className="about-layout">
+      <figure className="about-portrait reveal">
+        <img src="/portfolio/images/normal.png" alt="Dhaneera Dulvanya" loading="lazy" />
+        <figcaption>
+          <span className="about-quote-label">My mindset</span>
+          <blockquote className="about-quote">
+            <p>Think analytically. Innovate intelligently. Create meaningful impact.</p>
+          </blockquote>
+        </figcaption>
+      </figure>
       <div className="about-story reveal">
         <p className="lead-copy">
           I’m a Data Science undergraduate at <strong>Sabaragamuwa University of Sri Lanka</strong>, exploring how data and technology can make complex problems easier to understand.
@@ -36,18 +45,11 @@ const About = () => (
           My studies in a BSc (Hons) in Data Science bring me into the worlds of machine learning, analytics and artificial intelligence. Alongside the models, I enjoy the craft of building software: turning an idea into a useful, considered experience.
         </p>
         <p>
-          Away from my screen, I practise Karate, pick up my guitar, make time for fitness and stay curious about what I can learn next.
+          Away from my screen, I practice Karate, pick up my guitar, make time for fitness and stay curious about what I can learn next.
         </p>
         <a className="inline-link" href="#contact">A little more about working together <span aria-hidden="true">→</span></a>
-        <figure className="about-portrait reveal">
-          <img src="/portfolio/images/normal.png" alt="Dhaneera Dulvanya" loading="lazy" />
-          <figcaption>
-            <span className="fact-label">My mindset</span>
-            <strong>It’s me.<br />Nothing is impossible.</strong>
-          </figcaption>
-        </figure>
       </div>
-      <div className="about-facts">
+      <div className="about-facts reveal">
         {facts.map(({ icon: Icon, label, title, detail }, index) => (
           <article className="fact-card reveal" key={title}>
             <span className="fact-icon"><Icon aria-hidden="true" /></span>
