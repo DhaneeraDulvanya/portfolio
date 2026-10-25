@@ -32,7 +32,14 @@ const Experience = () => (
       <aside className="achievement-card achievements-card reveal">
         <p className="fact-label">Milestones</p>
         <h3>Achievements</h3>
-        <p className="achievements-empty">Academic, project, competition, and personal achievements will be highlighted here.</p>
+        <p className="achievements-empty">Achieved 1st Dan Black Belt in Karate – Japan Karate Association – 2019</p>
+        <p className="achievements-empty">Visharad Part I (Guitar) – Passed – Bhatkhande Sangith Vidyapith, Lucknow – 2021</p>
+        <p className="achievements-empty">Visharad Part II (Guitar) – Passed with 1st Division – Bhatkhande Sangith Vidyapith, Lucknow – 2022</p>
+        <p className="achievements-empty">Western Province School Games – Colours Award – Aerobic Gymnastics (Team) – 2022</p>
+        <p className="achievements-empty">All Island School Games – Aerobic Gymnastics (Team) – 2nd Place – 2022</p>
+        <p className="achievements-empty">School Vice Games Captain – Cenral College Piliyandala – 2023</p>
+        <p className="achievements-empty">Best Performance of Diploma in Information Technology Programme – Esoft Metro College, Piliyandala – 2024</p>
+        <p className="achievements-empty">15th Sri Lanka University Games – Karate - Team Kata Men - 3rd Place – 2025</p>
       </aside>
     </div>
     <div className="soft-skills reveal">
