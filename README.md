@@ -14,7 +14,7 @@ The React app entry is `src/main.jsx`; page sections are composed in `src/App.js
 ## Personal files and content
 
 - Replace `public/images/pic.png` with your profile image, or update the image path in `src/components/Hero.jsx`.
-- Add your CV as `public/assets/Dhaneera_Resume.pdf`. The header and hero download links already point to that path.
+- The header and hero download links use `public/assets/DhaneeraMalawaraArachchi.pdf`. Replace that file to update the downloadable CV.
 - Update personal details and projects in the corresponding components in `src/components/`.
 - Only the CAPCC repository link is currently published. Add project source or live-demo links to `src/components/Projects.jsx` after those links are verified; concept cards intentionally have no source or demo links.
 
